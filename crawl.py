@@ -81,6 +81,8 @@ def get_links(link):
                                         if (start_with_http(l.get("href")) and (not start_with_hash(l.get("href"))))])
         except requests.exceptions.ConnectionError:
             print("requests.exceptions.ConnectionError")
+        except requests.exceptions.ContentDecodingError:
+            print("requests.exceptions.ContentDecodingError")
 
 def recursive_crawl(start_link):
     # print(start_link)
